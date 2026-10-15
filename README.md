@@ -1,11 +1,13 @@
 # dupes
 
-Find duplicate photos in a folder, even resized, re-saved or converted copies. Keeps the highest resolution one.
+Finds duplicate photos in a folder. It compares perceptual hashes, so resized or recompressed copies are matched too.
 
 ```
 pip install -r requirements.txt
-python dupes.py ~/Pictures           # list duplicates
-python dupes.py ~/Pictures --clean   # move extra copies to ~/Pictures/.dupes-trash
+python dupes.py ~/Pictures
+python dupes.py ~/Pictures --clean
 ```
 
-`-t` sets how different two photos can be and still count (default 6, 0 = identical). Works with jpg, png, webp, heic and more.
+`--clean` moves every copy except the highest resolution one into `.dupes-trash` inside the folder. Nothing gets deleted.
+
+`-t` changes how close two photos have to be (default 6, 0 means identical).
