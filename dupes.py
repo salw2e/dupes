@@ -29,7 +29,6 @@ def scan(folder):
     return photos
 
 
-# ponytail: compares every photo against every group, slow past ~50k photos; use a BK-tree then
 def group(photos, threshold):
     groups = []
     for photo in photos:
